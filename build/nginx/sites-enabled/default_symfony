@@ -1,6 +1,6 @@
 server {
     server_name _;
-    root /var/www/html/symfony/web;
+    root /var/www/html/application/server/web;
     location / {
         # try to serve file directly, fallback to app.php
         try_files $uri /app_dev.php$is_args$args;
