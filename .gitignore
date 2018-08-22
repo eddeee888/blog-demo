@@ -1,3 +1,6 @@
 /logs/
 /mysql/
 vendor/
+node_modules/
+.env
+react/

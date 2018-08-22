@@ -1,0 +1,43 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ],
+    "react"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "dynamic-import-node",
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  },
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-runtime",
+    "syntax-dynamic-import",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "UI": "./src/common/components/ui",
+          "PageWrappers": "./src/common/components/page_wrappers",
+          "LoadingPlaceholders": "./src/common/components/loading_placeholders",
+          "Styles": "./src/common/styles",
+          "Utils": "./src/common/utils",
+          "HOCs": "./src/common/HOCs",
+          "Routes": "./src/common/routes",
+          "Services": "./src/services",
+          "Store": "./src/store"
+        }
+      }
+    ]
+  ]
+}
