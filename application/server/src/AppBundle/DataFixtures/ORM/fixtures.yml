@@ -1,0 +1,10 @@
+AppBundle\Entity\User:
+  user_{1..10}:
+    email: eddeee+<current()>@gmail.com
+
+AppBundle\Entity\Blog:
+  blog_{1..100}:
+    title: <text(20)>
+    content: <sentence()>
+    user: "@user_*"
+

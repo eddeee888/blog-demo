@@ -1,5 +1,16 @@
 version: '3'
 services:
+  db:
+    image: mysql
+    volumes:
+        - ./mysql:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DATABASE: ${MYSQL_DATABASE}
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+        - 3306:3306
   php:
     build: build/php
     expose:
@@ -13,20 +24,7 @@ services:
     build: build/nginx
     restart: always
     ports:
-        - '81:80'
-    depends_on:
-        - php
-        - db
+        - '80:80'
     volumes:
         - ./application:/var/www/html/application:cached
         - ./logs:/var/log/nginx
-  db:
-    image: mysql/mysql-server:latest
-    environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_ROOT_HOST=${MYSQL_ROOT_HOST}
-    ports:
-      - '3307:3306'
-    volumes:
-      - ./mysql:/var/lib/mysql
