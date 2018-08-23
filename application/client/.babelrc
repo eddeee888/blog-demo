@@ -33,9 +33,7 @@
           "Styles": "./src/common/styles",
           "Utils": "./src/common/utils",
           "HOCs": "./src/common/HOCs",
-          "Routes": "./src/common/routes",
-          "Services": "./src/services",
-          "Store": "./src/store"
+          "Routes": "./src/common/routes"
         }
       }
     ]

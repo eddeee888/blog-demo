@@ -6,8 +6,7 @@
   "scripts": {
     "test": "clear; jest --env=node --colors --coverage test",
     "dev": "webpack --env=dev --progress --colors --display-error-details",
-    "build": "webpack --env=prod --progress --colors --display-error-details",
-    "watch": "webpack-dev-server --env=dev --open --hot"
+    "build": "webpack --env=prod --progress --colors --display-error-details"
   },
   "keywords": [
     "react",

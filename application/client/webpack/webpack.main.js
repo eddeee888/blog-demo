@@ -10,7 +10,7 @@ module.exports = {
       'react',
       'react-dom',
     ],
-    home: `${paths.srcPath}/home/index.js`,
+    home: `${paths.srcPath}/pages/home/index.js`,
   },
 
   output: {

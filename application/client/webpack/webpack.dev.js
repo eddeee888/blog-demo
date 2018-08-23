@@ -7,6 +7,7 @@ const paths = require('./webpack.paths.js');
 
 const devConfig = merge(webpackMain, {
   mode: 'development',
+  watch: true,
   devServer: {
     historyApiFallback: true,
   },

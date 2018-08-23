@@ -1,11 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'react.html.twig' %}
 
-{% block title %} Welcome to cool block! {% endblock %}
-
-{% block body %}
-<h1>Welcome to cool blog</h1>
-{% endblock %}
+{% block title %} Welcome to cool blog! {% endblock %}
 
 {% block javascripts %}
-<script type="text/babel" src="{{ asset('js/react/home.bundle.js') }}"></script>
+{{ parent() }}
+<script src="{{ asset('js/react/home.bundle.js') }}" language="javascript" type="text/javascript"></script>
 {% endblock %}
