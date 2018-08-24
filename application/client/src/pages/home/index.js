@@ -16,6 +16,6 @@ const HomePage = () => (
   </div>
 );
 
-const WrappedHomePage = withDefaultPageWrapper(HomePage);
+const WrappedPage = withDefaultPageWrapper(HomePage);
 
-render(<WrappedHomePage />, document.getElementById('reactRoot'));
+render(<WrappedPage />, document.getElementById('reactRoot'));
