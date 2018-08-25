@@ -8,6 +8,10 @@ imports:
 parameters:
     locale: en
 
+graphql:
+    schema_class: "AppBundle\\GraphQL\\Schema"
+
+
 framework:
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
