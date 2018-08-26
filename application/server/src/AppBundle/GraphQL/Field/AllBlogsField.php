@@ -47,12 +47,14 @@ class AllBlogsField extends AbstractField
         $limit = $args['limit'] >= $this::MAX_LIMIT ? $this::MAX_LIMIT : $args['limit'];
 
         $em = $this->getEntityManager();
-        $queryBuilder = $em->getRepository(Blog::class)
-                           ->createQueryBuilder('blog')
-                           ->orderBy('blog.createdAt', 'DESC')
-                           ->setFirstResult($offset)
-                           ->setMaxResults($limit);
+        $qb = $em->getRepository(Blog::class)
+                 ->createQueryBuilder('blog')
+                 ->orderBy('blog.createdAt', 'DESC')
+                 ->setFirstResult($offset)
+                 ->setMaxResults($limit);
 
-        return $queryBuilder->getQuery()->execute();
+        $result = $qb->getQuery()->execute();
+
+        return $result;
     }
 }
