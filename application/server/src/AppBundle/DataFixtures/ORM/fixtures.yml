@@ -7,4 +7,5 @@ AppBundle\Entity\Blog:
     title: <text(20)>
     content: <sentence()>
     user: "@user_*"
+    createdAt: '<dateTimeBetween("-200 days", "now")>'
 

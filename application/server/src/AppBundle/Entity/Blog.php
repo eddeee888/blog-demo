@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogRepository")
  * @ORM\Table(name="blog")
  */
 class Blog
@@ -37,6 +37,11 @@ class Blog
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $createdAt = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     public function getId()
     {
@@ -83,7 +88,7 @@ class Blog
         $this->user = $user;
     }
 
-    public function setCreatedAt(string $createdAt)
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
     }

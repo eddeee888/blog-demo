@@ -7,7 +7,7 @@ use Youshido\GraphQL\Type\Object\AbstractObjectType;
 use AppBundle\GraphQL\Field\AllBlogsField;
 use AppBundle\GraphQL\Field\BlogField;
 
-class Query extends AbstractObjectType
+class RootQuery extends AbstractObjectType
 {
     /**
      * @param ObjectTypeConfig $config

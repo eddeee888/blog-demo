@@ -2,9 +2,9 @@
 
 namespace AppBundle\GraphQL\Field;
 
-use AppBundle\GraphQL\Type\BlogType;
-use Youshido\GraphQL\Execution\ResolveInfo;
 use Youshido\GraphQL\Field\AbstractField;
+use Youshido\GraphQL\Execution\ResolveInfo;
+use AppBundle\GraphQL\Type\BlogType;
 
 class BlogField extends AbstractField
 {
@@ -16,6 +16,11 @@ class BlogField extends AbstractField
         return new BlogType();
     }
 
+    /**
+     * @param $value
+     * @param array                                  $args
+     * @param Youshido\GraphQL\Execution\ResolveInfo $info
+     */
     public function resolve($value, array $args, ResolveInfo $info)
     {
         return [
