@@ -5,14 +5,14 @@ import { blog } from 'Routes';
 import { withDefaultPageWrapper } from 'HOCs';
 import { Page as PageLoadingPlaceholder } from 'LoadingPlaceholders';
 
-const BlogListContainer = Loadable({
-  loader: () => import('./containers/BlogListContainer'),
+const BlogList = Loadable({
+  loader: () => import('./pages/BlogList'),
   loading: PageLoadingPlaceholder,
 });
 
 const App = () => (
   <Switch>
-    <Route exact path={blog} component={BlogListContainer} />
+    <Route exact path={blog} component={BlogList} />
   </Switch>
 );
 

@@ -33,7 +33,8 @@
           "Styles": "./src/common/styles",
           "Utils": "./src/common/utils",
           "HOCs": "./src/common/HOCs",
-          "Routes": "./src/common/routes"
+          "Routes": "./src/common/routes",
+          "Adaptors": "./src/common/adaptors"
         }
       }
     ]
