@@ -2,25 +2,19 @@ import React, { PureComponent } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { ContentRow } from 'PageWrappers';
+import { flattenBlog } from 'EntityFunctions';
 import BlogListComponent from '../components/BlogListComponent';
 import BlogListPaginationComponent from '../components/BlogListPaginationComponent';
 
 const perPage = 3;
 
 class BlogListContainer extends PureComponent {
-  static _flattenBlogData(data) {
+  static _flattenAllBlogs(data) {
     // we use this function to:
     // 1. flatten blog object so it's easier to use
     // 2. convert `blog.user` into `author` as it makes more sense as the relationship
     // 3. handle case where `blog.user` is NULL
-    return data.map(blog => ({
-      id: blog.id,
-      title: blog.title,
-      content: blog.content,
-      createdAt: blog.created_at,
-      authorId: blog.user ? blog.user.id : null,
-      authorEmail: blog.user ? blog.user.username : null,
-    }));
+    return data.map(blog => flattenBlog(blog));
   }
 
   constructor(props) {
@@ -99,7 +93,7 @@ class BlogListContainer extends PureComponent {
 
           return (
             <div>
-              <BlogListComponent blogs={this.constructor._flattenBlogData(data.allBlogs)} />
+              <BlogListComponent blogs={this.constructor._flattenAllBlogs(data.allBlogs)} />
               <BlogListPaginationComponent goPrevious={this._goPrevious} goNext={this._goNext} />
             </div>
           );

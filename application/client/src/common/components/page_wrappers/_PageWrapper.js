@@ -14,6 +14,11 @@ const StyledPage = styled.div`
   line-height: 1.5em;
   ${media.medium`font-size: 16px`};
 
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   * {
     box-sizing: border-box;
   }

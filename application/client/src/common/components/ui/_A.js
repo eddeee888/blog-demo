@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { mainColor } from 'Styles/color';
 
 const StyledA = styled.a`
-  cursor: pointer;
-  text-decoration: none;
   font-size: 1em;
   color: ${mainColor};
 `;

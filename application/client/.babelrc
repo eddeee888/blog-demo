@@ -34,7 +34,8 @@
           "Utils": "./src/common/utils",
           "HOCs": "./src/common/HOCs",
           "Routes": "./src/common/routes",
-          "Adaptors": "./src/common/adaptors"
+          "Adaptors": "./src/common/adaptors",
+          "EntityFunctions": "./src/common/entity_functions"
         }
       }
     ]

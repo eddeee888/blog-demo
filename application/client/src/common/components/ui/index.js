@@ -6,5 +6,6 @@ import Button from './_Button';
 import TextField from './_TextField';
 import Checkbox from './_Checkbox';
 import NavLink from './_NavLink';
+import Link from './_Link';
 
-export { A, H1, H2, H3, Button, TextField, Checkbox, NavLink };
+export { A, H1, H2, H3, Button, TextField, Checkbox, NavLink, Link };
