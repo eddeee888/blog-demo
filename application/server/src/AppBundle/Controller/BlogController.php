@@ -13,7 +13,9 @@ class BlogController extends Controller
 {
     /**
      * @Route("/blog/", name="blog_list")
-     * @Route("/blog/{id}", name="blog")
+     * @Route("/blog/add"), name="blog_add")
+     * @Route("/blog/{id}", name="blog_view_id")
+     * @Route("/blog/{id}/edit", name="blog_edit_id")
      */
     public function showAction($id = null)
     {

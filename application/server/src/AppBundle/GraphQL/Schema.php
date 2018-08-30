@@ -9,6 +9,7 @@ class Schema extends AbstractSchema
 {
     public function build(SchemaConfig $config)
     {
-        $config->setQuery(new RootQuery());
+        $config->setQuery(new RootQuery())
+               ->setMutation(new RootMutation());
     }
 }

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { H2, Link } from 'UI';
 import { borderColor, mainColor } from 'Styles/color';
 import { ContentRow } from 'PageWrappers';
-import { blogView as blogViewUrl } from 'Routes';
+import { blog as blogUrl } from 'Routes'; // TODO: need to use `blogView` but replace :id dynamically
 
 const StyledSubText = styled.div`
   font-size: 0.8em;
@@ -23,7 +23,7 @@ const StyledBlockWrapper = styled.div`
 
 const BlogListComponent = ({ blogs }) =>
   blogs.map(blog => (
-    <Link to={`${blogViewUrl}/${blog.id}`} key={blog.id}>
+    <Link key={blog.id} to={`${blogUrl}/${blog.id}`} inheritTextColor>
       <StyledBlockWrapper>
         <ContentRow>
           <H2>{blog.title}</H2>
