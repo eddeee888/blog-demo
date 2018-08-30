@@ -1,12 +1,13 @@
 <?php
 
-namespace AppBundle\GraphQL\Field;
+namespace AppBundle\GraphQL\Field\Query;
 
 use Youshido\GraphQL\Config\Field\FieldConfig;
 use Youshido\GraphQL\Execution\ResolveInfo;
 use Youshido\GraphQL\Type\Scalar\IdType;
 use AppBundle\GraphQL\Type\BlogType;
 use AppBundle\Entity\Blog;
+use AppBundle\GraphQL\Field\AbstractField;
 
 class BlogField extends AbstractField
 {

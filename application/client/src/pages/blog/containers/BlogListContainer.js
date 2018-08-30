@@ -8,6 +8,21 @@ import BlogListPaginationComponent from '../components/BlogListPaginationCompone
 
 const perPage = 3;
 
+const QUERY_ALL_BLOG = gql`
+  query AllBlog($offset: Int!, $limit: Int!) {
+    allBlogs(offset: $offset, limit: $limit) {
+      id
+      title
+      content
+      created_at
+      user {
+        id
+        username
+      }
+    }
+  }
+`;
+
 class BlogListContainer extends PureComponent {
   static _flattenAllBlogs(data) {
     // we use this function to:
@@ -25,28 +40,8 @@ class BlogListContainer extends PureComponent {
       limit: perPage,
     };
 
-    this._generateQuery = this._generateQuery.bind(this);
     this._goPrevious = this._goPrevious.bind(this);
     this._goNext = this._goNext.bind(this);
-  }
-
-  componentDidMount() {}
-
-  _generateQuery() {
-    const { offset, limit } = this.state;
-    return gql`
-    {
-      allBlogs(offset: ${offset}, limit: ${limit}) {
-        id
-        title
-        content
-        created_at
-        user {
-          id
-          username
-        }
-      }
-    }`;
   }
 
   _goPrevious() {
@@ -76,9 +71,9 @@ class BlogListContainer extends PureComponent {
   }
 
   render() {
-    const query = this._generateQuery();
+    const { offset, limit } = this.state;
     return (
-      <Query query={query}>
+      <Query query={QUERY_ALL_BLOG} variables={{ offset, limit }} pollInterval={500}>
         {({ loading, error, data }) => {
           if (loading) {
             return (

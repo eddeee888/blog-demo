@@ -4,10 +4,9 @@ namespace AppBundle\GraphQL;
 
 use Youshido\GraphQL\Config\Object\ObjectTypeConfig;
 use Youshido\GraphQL\Type\Object\AbstractObjectType;
-use AppBundle\GraphQL\Field\Query\AllBlogsField;
-use AppBundle\GraphQL\Field\Query\BlogField;
+use AppBundle\GraphQL\Field\Mutation\AddBlogField;
 
-class RootQuery extends AbstractObjectType
+class RootMutation extends AbstractObjectType
 {
     /**
      * @param ObjectTypeConfig $config
@@ -15,8 +14,7 @@ class RootQuery extends AbstractObjectType
     public function build($config)
     {
         $config->addFields([
-            new AllBlogsField(),
-            new BlogField(),
+            new AddBlogField(),
         ]);
     }
 }
