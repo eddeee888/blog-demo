@@ -21,13 +21,29 @@ This is a simple sample blog app set up mainly with PHP backend and React front 
 - Docker
 
 ## How to start
-To start, from root folder, run docker compose to set up all dockers:
+
+To start, from root folder, set up database connection:
+
+```cp .env.dist .env```
+
+Run docker compose to set up all dockers:
 
 ```docker-compose up```
 
-Set up database environment:
+Install composer. Go to app root, then:
 
-```cp .env.dist .env```
+```
+cd application/server
+composer install
+cp app/config/parameters.yml.dist app/config/parameters.yml
+```
+
+Install node modules. Go to app root, then:
+
+```
+cd application/client
+yarn install
+```
 
 Create dummy data by going into php container and running migration/fixture commands
 
@@ -39,6 +55,18 @@ php bin/console doctrine:fixtures:load
 ```
 
 Go to ```localhost``` to start exploring! Enjoy!
+
+## Useful commands
+
+Login to mysql container
+
+```
+docker exec -it sample-blog_db_1 bash
+use mydb
+mysql -u root -p mydb
+Enter password: root
+```
+
 
 ## TODO
 - Authentication/authorisation
