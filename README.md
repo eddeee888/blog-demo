@@ -35,7 +35,6 @@ Install composer. Go to app root, then:
 ```
 cd application/server
 composer install
-cp app/config/parameters.yml.dist app/config/parameters.yml
 ```
 
 Install node modules. Go to app root, then:
@@ -43,6 +42,7 @@ Install node modules. Go to app root, then:
 ```
 cd application/client
 yarn install
+yarn watch
 ```
 
 Create dummy data by going into php container and running migration/fixture commands
