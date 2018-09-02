@@ -8,7 +8,7 @@ const StyledFooterContent = styled.div`
 
 const Footer = () => (
   <StyledFooterContent>
-    <A href="https://github.com/eddeee888/sample-blog" target="_blank">
+    <A href="https://github.com/eddeee888/blog-demo" target="_blank">
       GitHub Repository
     </A>
   </StyledFooterContent>
